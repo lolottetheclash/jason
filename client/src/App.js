@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Users from './Components/users/Users.js';
+import UserPage from './Components/users/UserPage';
 
 function App() {
-  return <Users />;
+  return <UserPage />;
 }
 
 export default App;
