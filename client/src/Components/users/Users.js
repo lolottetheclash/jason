@@ -9,7 +9,7 @@ const Users = props => {
     <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}>
       <Grid container spacing={3} style={{ width: '30%' }}>
         {users.map(user => (
-          <Grid item xs={12} sm={6} lg={4} xl={2} key={user._id}>
+          <Grid item xs={12} sm={6} lg={4} xl={4} key={user._id}>
             <User user={user} />
           </Grid>
         ))}
