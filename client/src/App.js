@@ -5,8 +5,15 @@ import Navbar from './Components/shared/Navbar';
 import Footer from './Components/shared/Footer';
 
 function App() {
+  return (
+    <div>
+      <div style={{ height: '100vh' }}>
         <Navbar />
         <UserPage />
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
