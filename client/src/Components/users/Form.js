@@ -36,8 +36,9 @@ const Form = props => {
         <Input
           id="userName"
           aria-describedby="User Name"
-          // value={user.name}
+          value={user.name}
           onChange={handleChange}
+          // error={!user.name.match('^[a-zA-Z]+$')}
         />
       </FormControl>
       <Button
