@@ -1,0 +1,29 @@
+{
+  "name": "jason",
+  "version": "1.0.0",
+  "description": "wild code school demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && npm run start",
+    "dev": "nodemon server.js",
+    "full-dev": "concurrently \"npm run dev\"  \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lolottetheclash/jason.git"
+  },
+  "author": "lauren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lolottetheclash/jason/issues"
+  },
+  "homepage": "https://github.com/lolottetheclash/jason#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7",
+    "nodemon": "^2.0.4"
+  }
+}
