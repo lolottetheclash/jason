@@ -20,7 +20,25 @@ const UserPage = () => {
 
   return (
     <div>
+      <Typography
+        variant="h5"
+        style={{ textAlign: 'center', marginTop: 40, fontWeight: 'bold' }}
+      >
+        Ajouter un(e) Argonaute
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        style={{ textAlign: 'center', marginTop: 40 }}
+      >
+        Nom de l'Argonaute
+      </Typography>
       <Form addUser={addUser} />
+      <Typography
+        variant="h5"
+        style={{ textAlign: 'center', marginTop: 40, fontWeight: 'bold' }}
+      >
+        Membres de l'équipage
+      </Typography>
       <Users users={users} />
     </div>
   );

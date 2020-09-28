@@ -16,7 +16,9 @@ const Navbar = () => {
     >
       <div style={{ display: 'flex' }}>
         <img src={Logo} style={{ width: 100, marginRight: 15 }} />
-        <Typography variant="h4">Les Argonautes</Typography>
+        <Typography variant="h4" style={{ fontWeight: 'bold' }}>
+          Les Argonautes
+        </Typography>
       </div>
     </AppBar>
   );

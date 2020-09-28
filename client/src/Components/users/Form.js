@@ -30,7 +30,13 @@ const Form = props => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 100 }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: 10,
+      }}
+    >
       <FormControl>
         <InputLabel htmlFor="User Name">Name</InputLabel>
         <Input
