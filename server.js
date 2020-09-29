@@ -7,13 +7,15 @@ const path = require('path');
 const app = express();
 
 // Loading environment variables
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: './config.env' });
 
 // Connect to db
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .catch(err => console.log(err.reason));
 
 // Parse URL
 app.use(express.json());
