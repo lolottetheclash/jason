@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FormControl, InputLabel, Input, Button } from '@material-ui/core';
 
 const Form = props => {
