@@ -10,7 +10,7 @@ const app = express();
 dotenv.config({ path: './config/config.env' });
 
 // Connect to db
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
