@@ -7,8 +7,7 @@ const path = require('path');
 // Loading environment variables only if not in production
 
 if (process.env.NODE_ENV !== 'production') {
-  console.log('not in prod');
-  require('dotenv').config({ path: './config/config.env' });
+  require('dotenv').config({ path: './config.env' });
 }
 
 const app = express();
@@ -17,10 +16,12 @@ const app = express();
 // dotenv.config({ path: './config/config.env' });
 
 // Connect to db
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .catch(err => console.log(err.reason));
 
 // Parse URL
 app.use(express.json());
