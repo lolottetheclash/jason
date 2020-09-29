@@ -34,6 +34,9 @@ const Form = props => {
       .then(res => res.json())
       .then(data => {
         addUser(data.user);
+        setUser({
+          name: '',
+        });
       });
   };
 
