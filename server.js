@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 
 // Loading environment variables
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: './config/config.env' });
 
 // Connect to db
 mongoose
@@ -15,7 +15,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .catch(err => console.log(err.reason));
+  .catch(err => console.log(err));
 
 // Parse URL
 app.use(express.json());
@@ -35,4 +35,6 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server listening on Port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server listening on Port ${PORT}, ${process.env.NODE_ENV}`)
+);
