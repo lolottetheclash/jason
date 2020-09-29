@@ -12,7 +12,7 @@ const Footer = () => {
     >
       <Grid item xs={12} sm={12} lg={12} xl={12}>
         <Paper
-          square="true"
+          square={true}
           style={{
             height: '100%',
             display: 'flex',
