@@ -20,6 +20,9 @@ mongoose
 // Parse URL
 app.use(express.json());
 
+// Import routes
+app.use('/api/users', users);
+
 // Serve static assets if env = production
 if (process.env.NODE_ENV === 'production') {
   // Set the static folder
@@ -29,9 +32,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-// Import routes
-app.use('/api/users', users);
 
 const PORT = process.env.PORT || 5000;
 
