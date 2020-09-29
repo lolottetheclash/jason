@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
-import { FormControl, InputLabel, Input, Button } from '@material-ui/core';
+import { FormControl, Button, TextField } from '@material-ui/core';
 
 const Form = props => {
   const { addUser } = props;
   const [user, setUser] = useState({
     name: '',
   });
+  const [err, setErr] = useState({
+    isError: false,
+    text: '',
+  });
 
   const handleChange = e => {
+    if (!e.target.value.match('^[a-zA-Z]+$') && e.target.value !== '') {
+      setErr({ text: 'Name must contain only letters', isError: true });
+    } else {
+      setErr({ text: '', isError: false });
+    }
     setUser({
       name: e.target.value,
     });
   };
 
   const onSubmit = () => {
-    console.log('user', user);
     fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify(user),
@@ -38,13 +46,14 @@ const Form = props => {
       }}
     >
       <FormControl>
-        <InputLabel htmlFor="User Name">Name</InputLabel>
-        <Input
+        <TextField
           id="userName"
           aria-describedby="User Name"
           value={user.name}
           onChange={handleChange}
-          // error={!user.name.match('^[a-zA-Z]+$')}
+          helperText={err.isError ? err.text : ''}
+          error={err.isError ? true : false}
+          label="Name"
         />
       </FormControl>
       <Button
@@ -53,6 +62,7 @@ const Form = props => {
         color="primary"
         style={{ marginLeft: 20 }}
         onClick={onSubmit}
+        disabled={err.text === '' ? false : true}
       >
         Submit
       </Button>
