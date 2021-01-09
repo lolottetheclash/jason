@@ -10,7 +10,7 @@ The subject was to create a simple API App and to offer thu use to create some w
 
 Using Dokerized app
 ```bash
-run docker-compose up --build
+docker-compose up --build
 ```
 
 You can see the app running on
