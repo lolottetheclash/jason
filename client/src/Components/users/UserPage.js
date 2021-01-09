@@ -19,7 +19,7 @@ const UserPage = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ flexGrow: 1 }}>
       <Typography
         variant="h5"
         style={{ textAlign: 'center', marginTop: 40, fontWeight: 'bold' }}

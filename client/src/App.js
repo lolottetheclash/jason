@@ -10,8 +10,8 @@ function App() {
       <div style={{ height: '100vh' }}>
         <Navbar />
         <UserPage />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
