@@ -23,7 +23,7 @@ const Form = props => {
   };
 
   const onSubmit = () => {
-    fetch('/api/users', {
+    fetch('http://localhost:5000/api/users', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {

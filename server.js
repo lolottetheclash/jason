@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
@@ -6,6 +7,7 @@ const path = require('path');
 
 const app = express();
 
+app.use(cors());
 // Loading environment variables
 dotenv.config({ path: './config/config.env' });
 
@@ -36,5 +38,5 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () =>
-  console.log(`Server listening on Port ${PORT}, ${process.env.NODE_ENV}`)
+  console.log(`Server listening on Port ${PORT}.`)
 );

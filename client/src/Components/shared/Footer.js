@@ -7,7 +7,7 @@ const Footer = () => {
       container
       style={{
         height: 60,
-        marginTop: -60,
+        marginTop: 60,
       }}
     >
       <Grid item xs={12} sm={12} lg={12} xl={12}>
