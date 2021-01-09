@@ -13,3 +13,6 @@ Using Dokerized app
 run docker-compose up --build
 ```
 
+You can see the app running on
+http://localhost:4000/
+
