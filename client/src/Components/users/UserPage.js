@@ -11,7 +11,7 @@ const UserPage = () => {
   };
 
   useEffect(() => {
-    fetch('/api/users')
+    fetch('http://localhost:5000/api/users')
       .then(res => res.json())
       .then(data => {
         setUsers(data.users);
