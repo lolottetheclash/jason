@@ -8,7 +8,11 @@ The subject was to create a simple API App and to offer thu use to create some w
 
 ## Installation
 
-Using Dokerized app
+Using Dokerized app:
+On root, you have to create the config folder add the file config.env which must contains MONGODB_URI & PORT.
+Once it's done, please run:
+
+
 ```bash
 docker-compose up --build
 ```
