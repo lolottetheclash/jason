@@ -11,7 +11,7 @@ const UserPage = () => {
   };
 
   useEffect(() => {
-    fetch('/api/users')
+    fetch('http://localhost:5000/api/users')
       .then(res => res.json())
       .then(data => {
         setUsers(data.users);
@@ -19,7 +19,7 @@ const UserPage = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ flexGrow: 1 }}>
       <Typography
         variant="h5"
         style={{ textAlign: 'center', marginTop: 40, fontWeight: 'bold' }}

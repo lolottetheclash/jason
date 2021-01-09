@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  frontend:
+    build: ./client
+    ports:
+      - 4000:3000
+    volumes:
+      - ./client/src:/app/src
+    stdin_open: true
+    tty: true
+
+  backend:
+    build: .
+    ports:
+      - 5000:5000
+    env_file: ./config/config.env
+    volumes:
+      - ./src:/app/src

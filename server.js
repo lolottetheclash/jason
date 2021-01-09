@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
@@ -6,6 +7,7 @@ const path = require('path');
 
 const app = express();
 
+app.use(cors());
 // Loading environment variables
 dotenv.config({ path: './config/config.env' });
 
