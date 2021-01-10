@@ -10,7 +10,7 @@ describe('Server testing', () => {
   });
   it('Gets the /api/users endpoint 200 response with simulated app', async done => {
     app.get('/api/users', async (req, res) => {
-      expect(response.status).toBe(200);
+      expect(res.status).toBe(200);
     });
     done();
   });
