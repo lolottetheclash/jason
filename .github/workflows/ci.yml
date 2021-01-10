@@ -8,10 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Access Source directory
-        run: cd ./client
-      - name: Ensure we are in the correct directory context
-        run: pwd
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
         
