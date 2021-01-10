@@ -6,11 +6,12 @@ on:
 jobs:
   frontend_jason:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client
-    
+
     steps:
+      - name: Access Source directory
+        run: cd WebApplication1Core
+      - name: Ensure we are in the correct directory context
+        run: pwd
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
         
