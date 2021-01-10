@@ -6,10 +6,18 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "client": "npm start --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "start": "node app.js",
+    "test": "jest --watchAll --no-cache",
+    "test:ci": "jest  --no-cache",
+    "server": "nodemon app.js",
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "modulePathIgnorePatterns": [
+      "./client"
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,5 +36,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.7",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "supertest": "^6.0.1"
   }
 }
