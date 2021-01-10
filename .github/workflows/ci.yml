@@ -6,6 +6,9 @@ on:
 jobs:
   frontend_jason:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./client
     
     steps:
       - name: Set up QEMU
@@ -19,12 +22,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        
-      - name: Go to client
-        run: cd client
         
       - name: Build and Push
         id: docker_build
